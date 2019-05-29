@@ -1,0 +1,180 @@
+{% block content %}
+    <script src="{{ url_for('static', filename = 'js/linedtextarea.js') }}"></script>
+    <style type="text/css" media="screen">
+        textarea {
+            overflow: auto;
+            outline: none;
+        }
+        #code{
+            border: 1px solid #ddd;
+            color: #444;
+        }
+        #code, .box{
+            width: 100%;
+            font-size: 14px;
+            font-stretch: 100%;
+            border-radius: 1px;
+            padding: 5px 10px;
+            box-shadow: 0 6px 16px 0 rgba(0,0,0,.2);
+            box-sizing: border-box;
+        }
+        .title{
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        .box{
+            position: relative;
+            border-radius: 15px;
+            height: 205px;
+            margin: 10px 0;
+            padding: 40px 10px 5px;
+            overflow-y: auto;
+        }
+        .box:not(.alert){
+            background: #fff;
+        }
+        #inputText{
+            background: transparent;
+            border: 0;
+            width: 100%;
+        }
+        #output,#error,#loader{
+            width: 100%;
+            display: none;
+        }
+        #loader{
+            text-align: center;
+        }
+        #loader img{
+            width: 40%;
+        }
+    </style>
+    
+    <form class="row" action="" method="post">
+        <div class="col-lg-8">
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+                    <textarea id="code" name="code" required="" rows="20">{% include "code.cpp" %}</textarea>
+                </div>   
+        </div>
+        <div class="col-lg-4">
+            <div class="row box">
+                <span class="title">Input</span>
+                <textarea id="inputText" name="inputText" rows="5"></textarea>
+            </div>
+            <div class="row box alert alert-warning">
+                <span class="title">Output</span>
+                <div id="loader">
+                    <img src="{{ url_for('static', filename = 'images/loader.gif') }}"/>
+                </div>
+                <div id="output">
+                </div>
+                <div id="error">
+                </div>
+            </div>
+        </div>
+        <div class="col-12 form-group">
+            <button class="btn btn-success" id="compile" name="submit">Compile</button>
+        </div>
+    </form>
+
+    <script>
+        $(function() {
+            $('#compile').click(function(e) {
+                e.preventDefault();
+                $('#output').hide();
+                $('#error').hide();
+                $('#loader').show();
+                $('#output').html("");
+                $('#error').html("");
+                $.ajax({
+                    url: '/',
+                    data: $('form').serialize(),
+                    type: 'POST',
+                    success: function(response) {
+                        $('#loader').hide();
+                        response = JSON.parse(response);
+                        if(response['error']){
+                            $('#error').fadeIn();
+                            response['error'].forEach(function (value) {
+                                $('#error').append(value+"<br/>");
+                            })
+                        }
+                        else if(response['output']){
+                            $('#output').fadeIn();
+                            response['output'].forEach(function (value) {
+                                $('#output').append(value+"<br/>");
+                            })
+                        }
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+                return false;
+            });
+        });
+
+        HTMLTextAreaElement.prototype.getCaretPosition = function () { //return the caret position of the textarea
+            return this.selectionStart;
+        };
+        HTMLTextAreaElement.prototype.setCaretPosition = function (position) { //change the caret position of the textarea
+            this.selectionStart = position;
+            this.selectionEnd = position;
+            this.focus();
+        };
+        HTMLTextAreaElement.prototype.hasSelection = function () { //if the textarea has selection then return true
+            if (this.selectionStart == this.selectionEnd) {
+                return false;
+            } else {
+                return true;
+            }
+        };
+        HTMLTextAreaElement.prototype.getSelectedText = function () { //return the selection text
+            return this.value.substring(this.selectionStart, this.selectionEnd);
+        };
+        HTMLTextAreaElement.prototype.setSelection = function (start, end) { //change the selection area of the textarea
+            this.selectionStart = start;
+            this.selectionEnd = end;
+            this.focus();
+        };
+
+        var textarea = document.getElementsByTagName('textarea')[0]; 
+
+        textarea.onkeydown = function(event) {
+            
+            //support tab on textarea
+            if (event.keyCode == 9) { //tab was pressed
+                var newCaretPosition;
+                newCaretPosition = textarea.getCaretPosition() + "    ".length;
+                textarea.value = textarea.value.substring(0, textarea.getCaretPosition()) + "    " + textarea.value.substring(textarea.getCaretPosition(), textarea.value.length);
+                textarea.setCaretPosition(newCaretPosition);
+                return false;
+            }
+            if(event.keyCode == 8){ //backspace
+                if (textarea.value.substring(textarea.getCaretPosition() - 4, textarea.getCaretPosition()) == "    ") { //it's a tab space
+                    var newCaretPosition;
+                    newCaretPosition = textarea.getCaretPosition() - 3;
+                    textarea.value = textarea.value.substring(0, textarea.getCaretPosition() - 3) + textarea.value.substring(textarea.getCaretPosition(), textarea.value.length);
+                    textarea.setCaretPosition(newCaretPosition);
+                }
+            }
+            if(event.keyCode == 37){ //left arrow
+                var newCaretPosition;
+                if (textarea.value.substring(textarea.getCaretPosition() - 4, textarea.getCaretPosition()) == "    ") { //it's a tab space
+                    newCaretPosition = textarea.getCaretPosition() - 3;
+                    textarea.setCaretPosition(newCaretPosition);
+                }    
+            }
+            if(event.keyCode == 39){ //right arrow
+                var newCaretPosition;
+                if (textarea.value.substring(textarea.getCaretPosition() + 4, textarea.getCaretPosition()) == "    ") { //it's a tab space
+                    newCaretPosition = textarea.getCaretPosition() + 3;
+                    textarea.setCaretPosition(newCaretPosition);
+                }
+            } 
+        }
+    </script>
+
+{% endblock %}

@@ -1,0 +1,56 @@
+<html>
+<head>
+    <title> C++ Compiler </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="{{ url_for('static', filename = 'images/logo.png') }}" sizes="16x16 32x32" type="image/png">
+    <style type="text/css" media="screen">
+        body {
+            background: #f3f7f7;
+            font-family: OpenSans, Arial, Helvetica;
+        }
+        .content{
+            padding: 0 20px;
+        }
+        h1, h2, h3, h4, h5, h6{
+            font-weight: 700;
+        }
+        .white-text{
+            color: #fefefe;
+        }
+        .header{
+            z-index: 999;
+            top: 0;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 20px;
+            box-shadow: 0.1px 1px 4px 0 #e7eeef;
+            height: 60px;
+            padding-top: 10px;
+            padding-left: 40px;
+            background: #39424e;
+        }
+        .logo{
+            width: 35px;
+            height: 35px;
+            float: left;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row header">
+        <div class="col-12">
+            <img src="{{ url_for('static', filename = 'images/logo.png') }}" class="logo" />
+            <h3 class="white-text">C++ Compiler</h3>
+        </div>
+    </div>
+    <div class="row content">
+        <div class="col-12">
+            {% include "compiler.html" %}
+        </div>
+    </div>
+</div>
+</body>
+</html>
