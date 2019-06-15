@@ -1,5 +1,4 @@
 {% block content %}
-    <script src="{{ url_for('static', filename = 'js/linedtextarea.js') }}"></script>
     <style type="text/css" media="screen">
         textarea {
             overflow: auto;
@@ -9,13 +8,11 @@
             border: 1px solid #ddd;
             color: #444;
         }
-        #code, .box{
+        #code, .box, .CodeMirror{
             width: 100%;
-            font-size: 14px;
-            font-stretch: 100%;
-            border-radius: 1px;
-            padding: 5px 10px;
-            box-shadow: 0 6px 16px 0 rgba(0,0,0,.2);
+            font-size: 1.05rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px 0 rgba(0,0,0,.2);
             box-sizing: border-box;
         }
         .title{
@@ -25,7 +22,6 @@
         }
         .box{
             position: relative;
-            border-radius: 15px;
             height: 205px;
             margin: 10px 0;
             padding: 40px 10px 5px;
@@ -39,7 +35,10 @@
             border: 0;
             width: 100%;
         }
-        #output,#error,#loader{
+        #inputText,#output{
+            font-family: monospace;
+        }
+        #output, #error,#loader{
             width: 100%;
             display: none;
         }
@@ -49,8 +48,16 @@
         #loader img{
             width: 40%;
         }
+
     </style>
-    
+    <script src="{{ url_for('static', filename = 'codemirror/lib/codemirror.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'codemirror/lib/codemirror.css') }}">
+    <script src="{{ url_for('static', filename = 'codemirror/mode/clike/clike.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'codemirror/addon/edit/matchbrackets.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'codemirror/addon/edit/closebrackets.js') }}"></script>
+
+
+
     <form class="row" action="" method="post">
         <div class="col-lg-8">
                 {{ form.hidden_tag() }}
@@ -80,9 +87,21 @@
     </form>
 
     <script>
+        var cppCodeBox = CodeMirror.fromTextArea(document.querySelector('#code'), {
+            mode:  "clike",
+            indentUnit: 4,
+            indentWithTabs: true,
+            lineNumbers: true,
+            matchBrackets: true,
+            autoCloseBrackets: true,
+        });
+
+        cppCodeBox.setSize(null, 430);
+
         $(function() {
             $('#compile').click(function(e) {
                 e.preventDefault();
+                cppCodeBox.save()
                 $('#output').hide();
                 $('#error').hide();
                 $('#loader').show();
@@ -97,15 +116,17 @@
                         response = JSON.parse(response);
                         if(response['error']){
                             $('#error').fadeIn();
-                            response['error'].forEach(function (value) {
+                            if(typeof response['error'] == "string")
+                                $('#error').html(response['error']);
+                            else response['error'].forEach(function (value) {
                                 $('#error').append(value+"<br/>");
-                            })
+                            });
                         }
                         else if(response['output']){
                             $('#output').fadeIn();
                             response['output'].forEach(function (value) {
                                 $('#output').append(value+"<br/>");
-                            })
+                            });
                         }
                     },
                     error: function(error) {
@@ -116,65 +137,6 @@
             });
         });
 
-        HTMLTextAreaElement.prototype.getCaretPosition = function () { //return the caret position of the textarea
-            return this.selectionStart;
-        };
-        HTMLTextAreaElement.prototype.setCaretPosition = function (position) { //change the caret position of the textarea
-            this.selectionStart = position;
-            this.selectionEnd = position;
-            this.focus();
-        };
-        HTMLTextAreaElement.prototype.hasSelection = function () { //if the textarea has selection then return true
-            if (this.selectionStart == this.selectionEnd) {
-                return false;
-            } else {
-                return true;
-            }
-        };
-        HTMLTextAreaElement.prototype.getSelectedText = function () { //return the selection text
-            return this.value.substring(this.selectionStart, this.selectionEnd);
-        };
-        HTMLTextAreaElement.prototype.setSelection = function (start, end) { //change the selection area of the textarea
-            this.selectionStart = start;
-            this.selectionEnd = end;
-            this.focus();
-        };
-
-        var textarea = document.getElementsByTagName('textarea')[0]; 
-
-        textarea.onkeydown = function(event) {
-            
-            //support tab on textarea
-            if (event.keyCode == 9) { //tab was pressed
-                var newCaretPosition;
-                newCaretPosition = textarea.getCaretPosition() + "    ".length;
-                textarea.value = textarea.value.substring(0, textarea.getCaretPosition()) + "    " + textarea.value.substring(textarea.getCaretPosition(), textarea.value.length);
-                textarea.setCaretPosition(newCaretPosition);
-                return false;
-            }
-            if(event.keyCode == 8){ //backspace
-                if (textarea.value.substring(textarea.getCaretPosition() - 4, textarea.getCaretPosition()) == "    ") { //it's a tab space
-                    var newCaretPosition;
-                    newCaretPosition = textarea.getCaretPosition() - 3;
-                    textarea.value = textarea.value.substring(0, textarea.getCaretPosition() - 3) + textarea.value.substring(textarea.getCaretPosition(), textarea.value.length);
-                    textarea.setCaretPosition(newCaretPosition);
-                }
-            }
-            if(event.keyCode == 37){ //left arrow
-                var newCaretPosition;
-                if (textarea.value.substring(textarea.getCaretPosition() - 4, textarea.getCaretPosition()) == "    ") { //it's a tab space
-                    newCaretPosition = textarea.getCaretPosition() - 3;
-                    textarea.setCaretPosition(newCaretPosition);
-                }    
-            }
-            if(event.keyCode == 39){ //right arrow
-                var newCaretPosition;
-                if (textarea.value.substring(textarea.getCaretPosition() + 4, textarea.getCaretPosition()) == "    ") { //it's a tab space
-                    newCaretPosition = textarea.getCaretPosition() + 3;
-                    textarea.setCaretPosition(newCaretPosition);
-                }
-            } 
-        }
     </script>
 
 {% endblock %}
