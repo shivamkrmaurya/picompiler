@@ -1,5 +1,5 @@
 from flask import render_template, flash, redirect, request
-from app import app
+from app import application
 from app.forms import CppForm
 import subprocess
 import json
@@ -7,7 +7,8 @@ from threading import Timer
 
 kill = lambda process: process.kill()
 
-@app.route("/", methods=["GET", "POST"])
+
+@application.route("/", methods=["GET", "POST"])
 def home():
     form = CppForm()
     if request.method == "POST":
@@ -32,20 +33,26 @@ def home():
             if error == [""]:
                 error = ""
 
-            subprocess.call(
-                    ["./compiled/tempCode <compiled/tempInput >compiled/tempOutput"],
-                    stdout=subprocess.PIPE,
-                    stderr=subprocess.PIPE,
-                    shell=True,
-                    timeout=1
+            child = subprocess.Popen(
+                ["./compiled/tempCode"],
+                stdin=open("compiled/tempInput", "r"),
+                stdout=open("compiled/tempOutput", "w"),
+                stderr=subprocess.PIPE,
             )
-
-            f = open("compiled/tempOutput", "r")
-            output = f.readlines()
-            f.close()
+            data = child.communicate(timeout=1)[0]
+            code = child.returncode
+            if code==0:
+                f = open("compiled/tempOutput", "r")
+                output = f.readlines()
+                f.close()
+            else:
+                child.kill()
+                error = "Command terminated by signal "+str(abs(code))
         except subprocess.TimeoutExpired:
+            child.kill()
             error = "Time Limit Exceeded"
         except Exception as e:
+            child.kill()
             error = str(e)
 
         return json.dumps({"error": error, "output": output})

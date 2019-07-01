@@ -1,2 +1,2 @@
-FLASK_APP=compiler.py
-FLASK_ENV=development
+FLASK_APP = picompiler.py
+FLASK_ENV = development
