@@ -1,0 +1,647 @@
+*** Starting uWSGI 2.0.18 (64bit) on [Thu Jul  4 22:08:36 2019] ***
+compiled with version: 8.3.0 on 17 June 2019 10:39:20
+os: Linux-4.19.45-1-MANJARO #1 SMP PREEMPT Wed May 22 17:16:41 UTC 2019
+nodename: piyush-dell
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/piyush/compiler
+detected binary path: /home/piyush/compiler/venv/bin/uwsgi
+chdir() to /home/piyush/compiler
+your processes number limit is 30943
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address picompiler.sock fd 7
+Python version: 3.7.3 (default, Mar 26 2019, 21:43:19)  [GCC 8.2.1 20181127]
+Set PythonHome to /home/piyush/compiler/venv/
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x561a04497700
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 437520 bytes (427 KB) for 5 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x561a04497700 pid: 9582 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 9582)
+spawned uWSGI worker 1 (pid: 9583, cores: 1)
+spawned uWSGI worker 2 (pid: 9584, cores: 1)
+spawned uWSGI worker 3 (pid: 9585, cores: 1)
+spawned uWSGI worker 4 (pid: 9586, cores: 1)
+spawned uWSGI worker 5 (pid: 9587, cores: 1)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 5 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/piyush/compiler
+closing all non-uwsgi socket fds > 2 (max_fd = 1048576)...
+found fd 7 mapped to socket 0 (picompiler.sock)
+running /home/piyush/compiler/venv/bin/uwsgi
+[uWSGI] getting INI configuration from /home/piyush/compiler/picompiler.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Thu Jul  4 22:08:44 2019] ***
+compiled with version: 8.3.0 on 17 June 2019 10:39:20
+os: Linux-4.19.45-1-MANJARO #1 SMP PREEMPT Wed May 22 17:16:41 UTC 2019
+nodename: piyush-dell
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/piyush/compiler
+detected binary path: /home/piyush/compiler/venv/bin/uwsgi
+chdir() to /home/piyush/compiler
+your processes number limit is 30943
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address picompiler.sock fd 7
+Python version: 3.7.3 (default, Mar 26 2019, 21:43:19)  [GCC 8.2.1 20181127]
+Set PythonHome to /home/piyush/compiler/venv/
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x557ece5f4630
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 437520 bytes (427 KB) for 5 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x557ece5f4630 pid: 9582 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 9582)
+sendmsg(): Transport endpoint is already connected [core/notify.c line 39]
+spawned uWSGI worker 1 (pid: 9629, cores: 1)
+spawned uWSGI worker 2 (pid: 9630, cores: 1)
+spawned uWSGI worker 3 (pid: 9631, cores: 1)
+spawned uWSGI worker 4 (pid: 9632, cores: 1)
+spawned uWSGI worker 5 (pid: 9633, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 5 buried after 1 seconds
+goodbye to uWSGI.
+VACUUM WARNING: unix socket picompiler.sock changed inode. Skip removal
+*** Starting uWSGI 2.0.18 (64bit) on [Thu Jul  4 22:09:02 2019] ***
+compiled with version: 8.3.0 on 17 June 2019 10:39:20
+os: Linux-4.19.45-1-MANJARO #1 SMP PREEMPT Wed May 22 17:16:41 UTC 2019
+nodename: piyush-dell
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/piyush/compiler
+detected binary path: /home/piyush/compiler/venv/bin/uwsgi
+chdir() to /home/piyush/compiler
+your processes number limit is 30943
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address picompiler.sock fd 7
+Python version: 3.7.3 (default, Mar 26 2019, 21:43:19)  [GCC 8.2.1 20181127]
+Set PythonHome to /home/piyush/compiler/venv/
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x5568db21c700
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 437520 bytes (427 KB) for 5 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x5568db21c700 pid: 9646 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 9646)
+spawned uWSGI worker 1 (pid: 9649, cores: 1)
+spawned uWSGI worker 2 (pid: 9650, cores: 1)
+spawned uWSGI worker 3 (pid: 9651, cores: 1)
+spawned uWSGI worker 4 (pid: 9652, cores: 1)
+spawned uWSGI worker 5 (pid: 9653, cores: 1)
+[pid: 9653|app: 0|req: 1/1] 127.0.0.1 () {46 vars in 979 bytes} [Thu Jul  4 22:09:12 2019] GET / => generated 6763 bytes in 59 msecs (HTTP/1.1 200) 3 headers in 95 bytes (1 switches on core 0)
+[pid: 9651|app: 0|req: 1/2] 127.0.0.1 () {52 vars in 1048 bytes} [Thu Jul  4 22:09:13 2019] POST / => generated 46 bytes in 1046 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 5 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/piyush/compiler
+closing all non-uwsgi socket fds > 2 (max_fd = 1048576)...
+found fd 7 mapped to socket 0 (picompiler.sock)
+running /home/piyush/compiler/venv/bin/uwsgi
+[uWSGI] getting INI configuration from /home/piyush/compiler/picompiler.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Thu Jul  4 22:10:02 2019] ***
+compiled with version: 8.3.0 on 17 June 2019 10:39:20
+os: Linux-4.19.45-1-MANJARO #1 SMP PREEMPT Wed May 22 17:16:41 UTC 2019
+nodename: piyush-dell
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/piyush/compiler
+detected binary path: /home/piyush/compiler/venv/bin/uwsgi
+chdir() to /home/piyush/compiler
+your processes number limit is 30943
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address picompiler.sock fd 7
+Python version: 3.7.3 (default, Mar 26 2019, 21:43:19)  [GCC 8.2.1 20181127]
+Set PythonHome to /home/piyush/compiler/venv/
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x559a7f622630
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x559a7f622630 pid: 9646 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 9646)
+sendmsg(): Transport endpoint is already connected [core/notify.c line 39]
+spawned uWSGI worker 1 (pid: 9742, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+VACUUM WARNING: unix socket picompiler.sock changed inode. Skip removal
+*** Starting uWSGI 2.0.18 (64bit) on [Thu Jul  4 22:10:07 2019] ***
+compiled with version: 8.3.0 on 17 June 2019 10:39:20
+os: Linux-4.19.45-1-MANJARO #1 SMP PREEMPT Wed May 22 17:16:41 UTC 2019
+nodename: piyush-dell
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/piyush/compiler
+detected binary path: /home/piyush/compiler/venv/bin/uwsgi
+chdir() to /home/piyush/compiler
+your processes number limit is 30943
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address picompiler.sock fd 7
+Python version: 3.7.3 (default, Mar 26 2019, 21:43:19)  [GCC 8.2.1 20181127]
+Set PythonHome to /home/piyush/compiler/venv/
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x56051bd9b700
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x56051bd9b700 pid: 9746 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 9746)
+spawned uWSGI worker 1 (pid: 9747, cores: 1)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/piyush/compiler
+closing all non-uwsgi socket fds > 2 (max_fd = 1048576)...
+found fd 7 mapped to socket 0 (picompiler.sock)
+running /home/piyush/compiler/venv/bin/uwsgi
+[uWSGI] getting INI configuration from /home/piyush/compiler/picompiler.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Thu Jul  4 22:10:08 2019] ***
+compiled with version: 8.3.0 on 17 June 2019 10:39:20
+os: Linux-4.19.45-1-MANJARO #1 SMP PREEMPT Wed May 22 17:16:41 UTC 2019
+nodename: piyush-dell
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/piyush/compiler
+detected binary path: /home/piyush/compiler/venv/bin/uwsgi
+chdir() to /home/piyush/compiler
+your processes number limit is 30943
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address picompiler.sock fd 7
+Python version: 3.7.3 (default, Mar 26 2019, 21:43:19)  [GCC 8.2.1 20181127]
+Set PythonHome to /home/piyush/compiler/venv/
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x561936d26630
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x561936d26630 pid: 9746 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 9746)
+sendmsg(): Transport endpoint is already connected [core/notify.c line 39]
+spawned uWSGI worker 1 (pid: 9758, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+VACUUM WARNING: unix socket picompiler.sock changed inode. Skip removal
+*** Starting uWSGI 2.0.18 (64bit) on [Thu Jul  4 22:10:11 2019] ***
+compiled with version: 8.3.0 on 17 June 2019 10:39:20
+os: Linux-4.19.45-1-MANJARO #1 SMP PREEMPT Wed May 22 17:16:41 UTC 2019
+nodename: piyush-dell
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/piyush/compiler
+detected binary path: /home/piyush/compiler/venv/bin/uwsgi
+chdir() to /home/piyush/compiler
+your processes number limit is 30943
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address picompiler.sock fd 7
+Python version: 3.7.3 (default, Mar 26 2019, 21:43:19)  [GCC 8.2.1 20181127]
+Set PythonHome to /home/piyush/compiler/venv/
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x563a9252e700
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x563a9252e700 pid: 9763 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 9763)
+spawned uWSGI worker 1 (pid: 9764, cores: 1)
+[pid: 9764|app: 0|req: 1/1] 127.0.0.1 () {46 vars in 979 bytes} [Thu Jul  4 22:10:21 2019] GET / => generated 6763 bytes in 54 msecs (HTTP/1.1 200) 3 headers in 95 bytes (1 switches on core 0)
+[pid: 9764|app: 0|req: 2/2] 127.0.0.1 () {52 vars in 1048 bytes} [Thu Jul  4 22:10:23 2019] POST / => generated 46 bytes in 1039 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 9764|app: 0|req: 3/3] 127.0.0.1 () {52 vars in 1048 bytes} [Fri Jul  5 10:10:30 2019] POST / => generated 46 bytes in 1034 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 9764|app: 0|req: 4/4] 127.0.0.1 () {52 vars in 1048 bytes} [Fri Jul  5 10:11:34 2019] POST / => generated 68 bytes in 59 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 9764|app: 0|req: 5/5] 127.0.0.1 () {52 vars in 1048 bytes} [Fri Jul  5 10:11:39 2019] POST / => generated 68 bytes in 103 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 9764|app: 0|req: 6/6] 127.0.0.1 () {52 vars in 1048 bytes} [Fri Jul  5 10:15:22 2019] POST / => generated 68 bytes in 97 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 9764|app: 0|req: 7/7] 127.0.0.1 () {52 vars in 1048 bytes} [Fri Jul  5 10:15:25 2019] POST / => generated 68 bytes in 115 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 9764|app: 0|req: 8/8] 127.0.0.1 () {52 vars in 1048 bytes} [Fri Jul  5 10:15:34 2019] POST / => generated 68 bytes in 93 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/piyush/compiler
+closing all non-uwsgi socket fds > 2 (max_fd = 1048576)...
+found fd 7 mapped to socket 0 (picompiler.sock)
+running /home/piyush/compiler/venv/bin/uwsgi
+[uWSGI] getting INI configuration from /home/piyush/compiler/picompiler.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Jul  5 10:15:44 2019] ***
+compiled with version: 8.3.0 on 17 June 2019 10:39:20
+os: Linux-4.19.45-1-MANJARO #1 SMP PREEMPT Wed May 22 17:16:41 UTC 2019
+nodename: piyush-dell
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/piyush/compiler
+detected binary path: /home/piyush/compiler/venv/bin/uwsgi
+chdir() to /home/piyush/compiler
+your processes number limit is 30943
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address picompiler.sock fd 7
+Python version: 3.7.3 (default, Mar 26 2019, 21:43:19)  [GCC 8.2.1 20181127]
+Set PythonHome to /home/piyush/compiler/venv/
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x564c95bc5630
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x564c95bc5630 pid: 9763 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 9763)
+sendmsg(): Transport endpoint is already connected [core/notify.c line 39]
+spawned uWSGI worker 1 (pid: 10619, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+VACUUM WARNING: unix socket picompiler.sock changed inode. Skip removal
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Jul  5 10:15:51 2019] ***
+compiled with version: 8.3.0 on 17 June 2019 10:39:20
+os: Linux-4.19.45-1-MANJARO #1 SMP PREEMPT Wed May 22 17:16:41 UTC 2019
+nodename: piyush-dell
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/piyush/compiler
+detected binary path: /home/piyush/compiler/venv/bin/uwsgi
+chdir() to /home/piyush/compiler
+your processes number limit is 30943
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address picompiler.sock fd 7
+Python version: 3.7.3 (default, Mar 26 2019, 21:43:19)  [GCC 8.2.1 20181127]
+Set PythonHome to /home/piyush/compiler/venv/
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x562611856700
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x562611856700 pid: 10636 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 10636)
+spawned uWSGI worker 1 (pid: 10643, cores: 1)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/piyush/compiler
+closing all non-uwsgi socket fds > 2 (max_fd = 1048576)...
+found fd 7 mapped to socket 0 (picompiler.sock)
+running /home/piyush/compiler/venv/bin/uwsgi
+[uWSGI] getting INI configuration from /home/piyush/compiler/picompiler.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Jul  5 10:15:54 2019] ***
+compiled with version: 8.3.0 on 17 June 2019 10:39:20
+os: Linux-4.19.45-1-MANJARO #1 SMP PREEMPT Wed May 22 17:16:41 UTC 2019
+nodename: piyush-dell
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/piyush/compiler
+detected binary path: /home/piyush/compiler/venv/bin/uwsgi
+chdir() to /home/piyush/compiler
+your processes number limit is 30943
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address picompiler.sock fd 7
+Python version: 3.7.3 (default, Mar 26 2019, 21:43:19)  [GCC 8.2.1 20181127]
+Set PythonHome to /home/piyush/compiler/venv/
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x5562fccf2630
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x5562fccf2630 pid: 10636 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 10636)
+sendmsg(): Transport endpoint is already connected [core/notify.c line 39]
+spawned uWSGI worker 1 (pid: 10667, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+VACUUM WARNING: unix socket picompiler.sock changed inode. Skip removal
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Jul  5 10:15:58 2019] ***
+compiled with version: 8.3.0 on 17 June 2019 10:39:20
+os: Linux-4.19.45-1-MANJARO #1 SMP PREEMPT Wed May 22 17:16:41 UTC 2019
+nodename: piyush-dell
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/piyush/compiler
+detected binary path: /home/piyush/compiler/venv/bin/uwsgi
+chdir() to /home/piyush/compiler
+your processes number limit is 30943
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address picompiler.sock fd 7
+Python version: 3.7.3 (default, Mar 26 2019, 21:43:19)  [GCC 8.2.1 20181127]
+Set PythonHome to /home/piyush/compiler/venv/
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x5627d9483700
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x5627d9483700 pid: 10669 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 10669)
+spawned uWSGI worker 1 (pid: 10671, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+VACUUM: unix socket picompiler.sock removed.
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Jul  5 10:16:02 2019] ***
+compiled with version: 8.3.0 on 17 June 2019 10:39:20
+os: Linux-4.19.45-1-MANJARO #1 SMP PREEMPT Wed May 22 17:16:41 UTC 2019
+nodename: piyush-dell
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/piyush/compiler
+detected binary path: /home/piyush/compiler/venv/bin/uwsgi
+chdir() to /home/piyush/compiler
+your processes number limit is 30943
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address picompiler.sock fd 7
+Python version: 3.7.3 (default, Mar 26 2019, 21:43:19)  [GCC 8.2.1 20181127]
+Set PythonHome to /home/piyush/compiler/venv/
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x5596ef59b700
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x5596ef59b700 pid: 10679 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 10679)
+spawned uWSGI worker 1 (pid: 10680, cores: 1)
+Traceback (most recent call last):
+  File "./app/routes.py", line 27, in home
+    stderr=subprocess.STDOUT,
+  File "/usr/lib64/python3.7/subprocess.py", line 395, in check_output
+    **kwargs).stdout
+  File "/usr/lib64/python3.7/subprocess.py", line 472, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/usr/lib64/python3.7/subprocess.py", line 775, in __init__
+    restore_signals, start_new_session)
+  File "/usr/lib64/python3.7/subprocess.py", line 1522, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'g++ compiled/tempCode.cpp -o compiled/tempCode; exit 0': 'g++ compiled/tempCode.cpp -o compiled/tempCode; exit 0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/piyush/compiler/venv/lib/python3.7/site-packages/flask/app.py", line 2328, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/piyush/compiler/venv/lib/python3.7/site-packages/flask/app.py", line 2314, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/piyush/compiler/venv/lib/python3.7/site-packages/flask/app.py", line 1760, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/piyush/compiler/venv/lib/python3.7/site-packages/flask/_compat.py", line 36, in reraise
+    raise value
+  File "/home/piyush/compiler/venv/lib/python3.7/site-packages/flask/app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/piyush/compiler/venv/lib/python3.7/site-packages/flask/app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/piyush/compiler/venv/lib/python3.7/site-packages/flask/app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/piyush/compiler/venv/lib/python3.7/site-packages/flask/_compat.py", line 36, in reraise
+    raise value
+  File "/home/piyush/compiler/venv/lib/python3.7/site-packages/flask/app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/piyush/compiler/venv/lib/python3.7/site-packages/flask/app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./app/routes.py", line 54, in home
+    child.kill()
+UnboundLocalError: local variable 'child' referenced before assignment
+[pid: 10680|app: 0|req: 1/1] 127.0.0.1 () {52 vars in 1048 bytes} [Fri Jul  5 10:16:10 2019] POST / => generated 0 bytes in 49 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 0)
+[pid: 10680|app: 0|req: 2/2] 127.0.0.1 () {46 vars in 979 bytes} [Fri Jul  5 10:16:25 2019] GET / => generated 6763 bytes in 53 msecs (HTTP/1.1 200) 3 headers in 95 bytes (1 switches on core 0)
+Traceback (most recent call last):
+  File "./app/routes.py", line 27, in home
+    stderr=subprocess.STDOUT,
+  File "/usr/lib64/python3.7/subprocess.py", line 395, in check_output
+    **kwargs).stdout
+  File "/usr/lib64/python3.7/subprocess.py", line 472, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/usr/lib64/python3.7/subprocess.py", line 775, in __init__
+    restore_signals, start_new_session)
+  File "/usr/lib64/python3.7/subprocess.py", line 1522, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'g++ compiled/tempCode.cpp -o compiled/tempCode; exit 0': 'g++ compiled/tempCode.cpp -o compiled/tempCode; exit 0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/piyush/compiler/venv/lib/python3.7/site-packages/flask/app.py", line 2328, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/piyush/compiler/venv/lib/python3.7/site-packages/flask/app.py", line 2314, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/piyush/compiler/venv/lib/python3.7/site-packages/flask/app.py", line 1760, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/piyush/compiler/venv/lib/python3.7/site-packages/flask/_compat.py", line 36, in reraise
+    raise value
+  File "/home/piyush/compiler/venv/lib/python3.7/site-packages/flask/app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/piyush/compiler/venv/lib/python3.7/site-packages/flask/app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/piyush/compiler/venv/lib/python3.7/site-packages/flask/app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/piyush/compiler/venv/lib/python3.7/site-packages/flask/_compat.py", line 36, in reraise
+    raise value
+  File "/home/piyush/compiler/venv/lib/python3.7/site-packages/flask/app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/piyush/compiler/venv/lib/python3.7/site-packages/flask/app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./app/routes.py", line 54, in home
+    child.kill()
+UnboundLocalError: local variable 'child' referenced before assignment
+[pid: 10680|app: 0|req: 3/3] 127.0.0.1 () {52 vars in 1048 bytes} [Fri Jul  5 10:16:26 2019] POST / => generated 0 bytes in 42 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 0)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/piyush/compiler
+closing all non-uwsgi socket fds > 2 (max_fd = 1048576)...
+found fd 7 mapped to socket 0 (picompiler.sock)
+running /home/piyush/compiler/venv/bin/uwsgi
+[uWSGI] getting INI configuration from /home/piyush/compiler/picompiler.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Jul  5 10:17:17 2019] ***
+compiled with version: 8.3.0 on 17 June 2019 10:39:20
+os: Linux-4.19.45-1-MANJARO #1 SMP PREEMPT Wed May 22 17:16:41 UTC 2019
+nodename: piyush-dell
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/piyush/compiler
+detected binary path: /home/piyush/compiler/venv/bin/uwsgi
+chdir() to /home/piyush/compiler
+your processes number limit is 30943
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address picompiler.sock fd 7
+Python version: 3.7.3 (default, Mar 26 2019, 21:43:19)  [GCC 8.2.1 20181127]
+Set PythonHome to /home/piyush/compiler/venv/
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x5579a974f630
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x5579a974f630 pid: 10679 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 10679)
+sendmsg(): Transport endpoint is already connected [core/notify.c line 39]
+spawned uWSGI worker 1 (pid: 10797, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+VACUUM WARNING: unix socket picompiler.sock changed inode. Skip removal
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Jul  5 10:17:21 2019] ***
+compiled with version: 8.3.0 on 17 June 2019 10:39:20
+os: Linux-4.19.45-1-MANJARO #1 SMP PREEMPT Wed May 22 17:16:41 UTC 2019
+nodename: piyush-dell
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/piyush/compiler
+detected binary path: /home/piyush/compiler/venv/bin/uwsgi
+chdir() to /home/piyush/compiler
+your processes number limit is 30943
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address picompiler.sock fd 7
+Python version: 3.7.3 (default, Mar 26 2019, 21:43:19)  [GCC 8.2.1 20181127]
+Set PythonHome to /home/piyush/compiler/venv/
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x565545725700
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x565545725700 pid: 10802 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 10802)
+spawned uWSGI worker 1 (pid: 10803, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+VACUUM: unix socket picompiler.sock removed.
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Jul  5 10:17:23 2019] ***
+compiled with version: 8.3.0 on 17 June 2019 10:39:20
+os: Linux-4.19.45-1-MANJARO #1 SMP PREEMPT Wed May 22 17:16:41 UTC 2019
+nodename: piyush-dell
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/piyush/compiler
+detected binary path: /home/piyush/compiler/venv/bin/uwsgi
+chdir() to /home/piyush/compiler
+your processes number limit is 30943
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address picompiler.sock fd 7
+Python version: 3.7.3 (default, Mar 26 2019, 21:43:19)  [GCC 8.2.1 20181127]
+Set PythonHome to /home/piyush/compiler/venv/
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x564262e59700
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x564262e59700 pid: 10812 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 10812)
+spawned uWSGI worker 1 (pid: 10813, cores: 1)
+[pid: 10813|app: 0|req: 1/1] 127.0.0.1 () {46 vars in 979 bytes} [Fri Jul  5 10:17:29 2019] GET / => generated 6763 bytes in 63 msecs (HTTP/1.1 200) 3 headers in 95 bytes (1 switches on core 0)
+[pid: 10813|app: 0|req: 2/2] 127.0.0.1 () {52 vars in 1048 bytes} [Fri Jul  5 10:17:31 2019] POST / => generated 46 bytes in 1040 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 10813|app: 0|req: 3/3] 127.0.0.1 () {52 vars in 1048 bytes} [Fri Jul  5 10:17:34 2019] POST / => generated 46 bytes in 1179 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 10813|app: 0|req: 4/4] 127.0.0.1 () {52 vars in 1048 bytes} [Fri Jul  5 10:17:39 2019] POST / => generated 46 bytes in 1040 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 10813|app: 0|req: 5/5] 127.0.0.1 () {52 vars in 1048 bytes} [Fri Jul  5 10:17:53 2019] POST / => generated 68 bytes in 52 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 10813|app: 0|req: 6/6] 127.0.0.1 () {52 vars in 1048 bytes} [Fri Jul  5 10:17:56 2019] POST / => generated 68 bytes in 36 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 10813|app: 0|req: 7/7] 127.0.0.1 () {52 vars in 1048 bytes} [Fri Jul  5 10:19:04 2019] POST / => generated 68 bytes in 54 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+VACUUM: unix socket picompiler.sock removed.

@@ -9,8 +9,6 @@
             color: #444;
         }
         #code, .box, .CodeMirror{
-            width: 100%;
-            height: 100%;
             font-size: 1.05rem;
             border-radius: 8px;
             box-shadow: 0 3px 10px 0 rgba(0,0,0,.2);
@@ -23,7 +21,6 @@
         }
         .box{
             position: relative;
-            height: 40%;
             margin: 10px 0;
             padding: 40px 10px 5px;
             overflow-y: auto;
@@ -63,18 +60,18 @@
 
 
     <form class="row" action="" method="post">
-        <div class="col-lg-8 mh-100">
+        <div class="col-lg-8">
                 {{ form.hidden_tag() }}
                 <div class="form-group">
                     <textarea id="code" name="code" required="" rows="20">{% include "code.cpp" %}</textarea>
                 </div>   
         </div>
         <div class="col-lg-4">
-            <div class="row box mh-50">
+            <div class="row box">
                 <span class="title">Input</span>
                 <textarea id="inputText" name="inputText" rows="5"></textarea>
             </div>
-            <div class="row box alert alert-warning mh-50">
+            <div class="row box alert alert-warning">
                 <span class="title">Output</span>
                 <div id="loader">
                     <img src="{{ url_for('static', filename = 'images/loader.gif') }}"/>
@@ -86,11 +83,16 @@
             </div>
         </div>
         <div class="col-12 form-group">
-            <button class="btn btn-success" id="compile" name="submit">Compile <small>(Ctrl+R)</small></button>
+            <button class="btn btn-success" id="compile" name="submit">Compile <small>(Ctrl+Q)</small></button>
         </div>
     </form>
 
     <script>
+        var offset = 180;
+        var wH = window.innerHeight - offset;
+        
+        $('.box').css('height', wH/2);
+
         var cppCodeBox = CodeMirror.fromTextArea(document.querySelector('#code'), {
             mode: "text/x-c++src",
             indentUnit: 4,
@@ -100,7 +102,7 @@
             autoCloseBrackets: true,
         });
 
-        cppCodeBox.setSize(null, "82%");
+        cppCodeBox.setSize(null, wH+20);
 
         function run() {
             cppCodeBox.save()
@@ -145,7 +147,7 @@
                 return false;
             });
             $(document).keydown(function(e){
-                if(e.ctrlKey && e.keyCode==82) run();
+                if(e.ctrlKey && e.keyCode==81) run();
             });
         });
 
