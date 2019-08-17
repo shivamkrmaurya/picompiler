@@ -10,6 +10,7 @@
         }
         #code, .box, .CodeMirror{
             width: 100%;
+            height: 100%;
             font-size: 1.05rem;
             border-radius: 8px;
             box-shadow: 0 3px 10px 0 rgba(0,0,0,.2);
@@ -22,10 +23,13 @@
         }
         .box{
             position: relative;
-            height: 205px;
+            height: 40%;
             margin: 10px 0;
             padding: 40px 10px 5px;
             overflow-y: auto;
+        }   
+        .box .title{
+            color: #000;
         }
         .box:not(.alert){
             background: #fff;
@@ -35,7 +39,7 @@
             border: 0;
             width: 100%;
         }
-        #inputText,#output{
+        #inputText,#output,#error{
             font-family: monospace;
         }
         #output, #error,#loader{
@@ -59,18 +63,18 @@
 
 
     <form class="row" action="" method="post">
-        <div class="col-lg-8">
+        <div class="col-lg-8 mh-100">
                 {{ form.hidden_tag() }}
                 <div class="form-group">
                     <textarea id="code" name="code" required="" rows="20">{% include "code.cpp" %}</textarea>
                 </div>   
         </div>
         <div class="col-lg-4">
-            <div class="row box">
+            <div class="row box mh-50">
                 <span class="title">Input</span>
                 <textarea id="inputText" name="inputText" rows="5"></textarea>
             </div>
-            <div class="row box alert alert-warning">
+            <div class="row box alert alert-warning mh-50">
                 <span class="title">Output</span>
                 <div id="loader">
                     <img src="{{ url_for('static', filename = 'images/loader.gif') }}"/>
@@ -82,7 +86,7 @@
             </div>
         </div>
         <div class="col-12 form-group">
-            <button class="btn btn-success" id="compile" name="submit">Compile</button>
+            <button class="btn btn-success" id="compile" name="submit">Compile <small>(Ctrl+R)</small></button>
         </div>
     </form>
 
@@ -96,44 +100,52 @@
             autoCloseBrackets: true,
         });
 
-        cppCodeBox.setSize(null, 430);
+        cppCodeBox.setSize(null, "82%");
+
+        function run() {
+            cppCodeBox.save()
+            $('#output').hide();
+            $('#error').hide();
+            $('#loader').show();
+            $('#output').html("");
+            $('#error').html("");
+            $.ajax({
+                url: '/',
+                data: $('form').serialize(),
+                type: 'POST',
+                success: function(response) {
+                    $('#loader').hide();
+                    response = JSON.parse(response);
+                    if(response['error']){
+                        $('#error').fadeIn();
+                        if(typeof response['error'] == "string")
+                            $('#error').html(response['error']);
+                        else response['error'].forEach(function (value) {
+                            $('#error').append(value+"<br/>");
+                        });
+                    }
+                    else if(response['output']){
+                        $('#output').fadeIn();
+                        $('#output').append("Successfully compiled in <b>"+response['time'].toFixed(3)+"</b> seconds! <br/>");
+                        response['output'].forEach(function (value) {
+                            $('#output').append(value+"<br/>");
+                        });
+                    }
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+        }
 
         $(function() {
             $('#compile').click(function(e) {
                 e.preventDefault();
-                cppCodeBox.save()
-                $('#output').hide();
-                $('#error').hide();
-                $('#loader').show();
-                $('#output').html("");
-                $('#error').html("");
-                $.ajax({
-                    url: '/',
-                    data: $('form').serialize(),
-                    type: 'POST',
-                    success: function(response) {
-                        $('#loader').hide();
-                        response = JSON.parse(response);
-                        if(response['error']){
-                            $('#error').fadeIn();
-                            if(typeof response['error'] == "string")
-                                $('#error').html(response['error']);
-                            else response['error'].forEach(function (value) {
-                                $('#error').append(value+"<br/>");
-                            });
-                        }
-                        else if(response['output']){
-                            $('#output').fadeIn();
-                            response['output'].forEach(function (value) {
-                                $('#output').append(value+"<br/>");
-                            });
-                        }
-                    },
-                    error: function(error) {
-                        console.log(error);
-                    }
-                });
+                run();
                 return false;
+            });
+            $(document).keydown(function(e){
+                if(e.ctrlKey && e.keyCode==82) run();
             });
         });
 

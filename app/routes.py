@@ -4,6 +4,7 @@ from app.forms import CppForm
 import subprocess
 import json
 from threading import Timer
+import time
 
 kill = lambda process: process.kill()
 
@@ -20,6 +21,7 @@ def home():
         f.close()
         error = ""
         output = ""
+        executionTime = 0
         try:
             error = str(
                 subprocess.check_output(
@@ -33,6 +35,7 @@ def home():
             if error == [""]:
                 error = ""
 
+            timeStarted = time.time()
             child = subprocess.Popen(
                 ["./compiled/tempCode"],
                 stdin=open("compiled/tempInput", "r"),
@@ -40,6 +43,8 @@ def home():
                 stderr=subprocess.PIPE,
             )
             data = child.communicate(timeout=1)[0]
+            executionTime = time.time() - timeStarted
+            
             code = child.returncode
             if code==0:
                 f = open("compiled/tempOutput", "r")
@@ -55,6 +60,6 @@ def home():
             child.kill()
             error = str(e)
 
-        return json.dumps({"error": error, "output": output})
+        return json.dumps({"error": error, "output": output, "time": executionTime})
     return render_template("home.html", title="Compiler", form=form)
 
